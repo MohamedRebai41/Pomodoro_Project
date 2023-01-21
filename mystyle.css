@@ -1,0 +1,63 @@
+*{
+    background-color: rgb(52, 26, 94);
+}
+
+#main
+{
+    width: 450px;
+    height:300px;
+    background-color: red ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+
+#menu
+{
+    width: 330px;
+    height:60px;
+    margin-top: 10px;
+    margin-left:60px;
+    position: relative;
+    background-color: rgb(72, 255, 0) ;
+    border-radius: 9%/60%;
+}
+
+
+#timer
+{
+    position: relative;
+    width: 400px;
+    height:180px;
+    background-color: aqua;
+    margin-top: 30px;
+    margin-left: 25px;
+
+}
+
+
+.menu_elts
+{
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    width: 110px;
+    height: 60px;
+    float: left;
+  
+    border-radius:  60%/130%;
+    background-color: rgb(72, 255, 0) ;
+
+}
+
+
+.menu_elts:hover
+{
+    background-color: rgb(4, 0, 255);
+    cursor: pointer;
+}
