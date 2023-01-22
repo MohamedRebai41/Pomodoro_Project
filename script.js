@@ -58,3 +58,15 @@ menu_elts[1].addEventListener("click",function(){
 menu_elts[2].addEventListener("click",function(){
     startTimer(600);
 });
+
+
+
+let setbtn=document.getElementById("setbtn");
+setbtn.addEventListener("click",function(){
+    let el=document.getElementById("setmenu");
+    el.classList.toggle("hide");
+})
+
+
+
+let a=document.getElementById("pomodoro_time").value;
