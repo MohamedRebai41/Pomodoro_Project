@@ -4,6 +4,39 @@ let idinterval;
 let timer=document.getElementById("timer");
 timer.innerHTML="00:00:00";
 
+
+
+
+
+
+let savebtn=document.getElementById("savebtn");
+let d1=(localStorage.getItem("d1")===null)?1800:localStorage.getItem("d1"),d2=(localStorage.getItem("d2")===null)?300:localStorage.getItem("d2"),d3=(localStorage.getItem("d3")===null)?600:localStorage.getItem("d3");
+
+savebtn.addEventListener("click",function(event){
+    let a1=document.getElementById("pomodoro_time").value;
+    let a2=document.getElementById("sb_time").value;
+    let a3=document.getElementById("lb_time").value;
+    if(!(/^$|^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/.test(a1)) || !(/^$|^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/.test(a2)) || !(/^$|^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/.test(a3)))
+    {
+        alert("Please enter a valid time");
+        return;
+    }
+    else
+    {
+        d1= (a1==="")?1800: parseInt(a1)*3600+parseInt(a1.slice(3))*60+parseInt(a1.slice(6));
+        d2= (a2==="")?300: parseInt(a2)*3600+parseInt(a2.slice(3))*60+parseInt(a2.slice(6));
+        d3= (a3==="")?600: parseInt(a3)*3600+parseInt(a3.slice(3))*60+parseInt(a3.slice(6));
+        document.getElementById("pomodoro_time").value="";
+        document.getElementById("sb_time").value="";
+        document.getElementById("lb_time").value="";
+        let el=document.getElementById("setmenu");
+        el.classList.toggle("hide");
+        localStorage.setItem("d1", d1);
+        localStorage.setItem("d2", d2);
+        localStorage.setItem("d3", d3);
+    }
+});
+
 function startTimer(distance)
 {
     clearInterval(idinterval);
@@ -50,13 +83,13 @@ function pad(x,l,c)
 
 let menu_elts= document.querySelectorAll(".menu_elts");
 menu_elts[0].addEventListener("click",function(){
-    startTimer(1800);
+    startTimer(d1);
 });
 menu_elts[1].addEventListener("click",function(){
-    startTimer(300);
+    startTimer(d2);
 });
 menu_elts[2].addEventListener("click",function(){
-    startTimer(600);
+    startTimer(d3);
 });
 
 
@@ -69,4 +102,27 @@ setbtn.addEventListener("click",function(){
 
 
 
-let a=document.getElementById("pomodoro_time").value;
+
+document.getElementById("pomodoro_time").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("savebtn").click();
+  }
+});
+
+
+document.getElementById("sb_time").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("savebtn").click();
+    }
+  });
+  
+  document.getElementById("lb_time").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("savebtn").click();
+    }
+  });
+  
+    

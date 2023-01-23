@@ -124,18 +124,61 @@
    
 }
 
+h2
+{
+    font-size: 30px;
+    text-align: center;
+}
 
 #content
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    transform: translate(5%,0%);
+    width: 400px;
+    height: 250px;
+    background-color:white;
     text-align: left;
 }
 
+input[type=text]
+{
+    width: 50%;
+    height: 30px;
+    
+}
 
+label {
+    display: inline-block;
+    width: 150px;
+    font-size: large;
+    font-weight: 550;
+}
+
+#savebtn
+{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: black;
+    border-radius: 10%;
+    color: white;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+}
+
+#savebtn:hover
+{
+    background-color: #f87270;
+    transition: 0.2s;
+}
+
+.set
+{
+    background-color: white;
+}
 .hide
 {
     display: none;

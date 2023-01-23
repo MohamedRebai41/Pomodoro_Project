@@ -24,9 +24,16 @@
     <div id="settings">
     <button class="btn" id="setbtn"> <i class="fa-solid fa-gear fa-2xl"></i> </button>
     </div>
-    <div id="setmenu"> 
+    <div id="setmenu" class="hide"> 
         <div id="content">
-            <input type="text" id="pomodoro_time" name="pomodoro_time">
+            <h2 class="set">Preferences:</h2>
+            <label class="set" for="pomodoro_time"> Pomodoro: </label> 
+            <input class="set" type="text" id="pomodoro_time" name="pomodoro_time" placeholder="hh:mm:ss"> <br><br>
+            <label class="set" for="sb_time"> Short Break: </label>
+            <input class="set"  type="text" id="sb_time" name="sb_time" placeholder="hh:mm:ss"> <br><br>
+            <label class="set" for="sb_time"> Short Break: </label>
+            <input class="set" type="text" id="lb_time" name="lb_time" placeholder="hh:mm:ss"> <br><br>
+            <button class="set" id="savebtn" > Save </button> 
         </div>
     </div>
     </div>
