@@ -31,6 +31,7 @@
 
 #timer
 {
+    cursor: pointer;
     position: relative;
     width: 380px;
     height:160px;
@@ -47,6 +48,13 @@
     justify-content:center;
 
 }
+
+#timer:hover
+{
+    color: #f87270;
+    transition: 0.5s;
+}
+
 
 
 .menu_elts

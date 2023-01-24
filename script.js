@@ -1,11 +1,23 @@
 
 let idinterval;
-
+let global_distance;
 let timer=document.getElementById("timer");
 timer.innerHTML="00:00:00";
 
 
-
+let pause=false;
+timer.addEventListener("click",function(){
+    if(pause)
+    {
+        pause=false;
+       startTimer(global_distance);
+    }
+    else
+    {
+        pause=true;
+        clearInterval(idinterval);
+    }
+});
 
 
 
@@ -39,6 +51,8 @@ savebtn.addEventListener("click",function(event){
 
 function startTimer(distance)
 {
+    if(distance>0)
+    {
     clearInterval(idinterval);
     timer.style.border="10px solid #151932";
     timer.style.transition="0.1s";
@@ -48,8 +62,9 @@ function startTimer(distance)
     {
         SetTimer(distance);
         distance--;
+        global_distance=distance;
     },1000);
-
+}
 }
 
 
@@ -126,3 +141,4 @@ document.getElementById("sb_time").addEventListener("keypress", function(event) 
   });
   
     
+
